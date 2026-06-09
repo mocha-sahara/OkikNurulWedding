@@ -8,21 +8,21 @@ const dataUndangan = {
     umum: {
         judulWeb: "The Wedding of okik & nurul",
         deskripsiWeb: "Undangan Pernikahan okik & nurul",
-        audioLatar: "src=https://okik-nurul-wedding.vercel.app/assets/audio/lagu.MP3", // Path ke file lagu
+        audioLatar: "https://okik-nurul-wedding.vercel.app/assets/audio/lagu.MP3", // Path ke file lagu
         putarOtomatis: true
     },
 
     // 2. KUTIPAN / AYAT (Opsional, biasa diletakkan sebelum profil)
     kutipan: {
         teks: "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.",
-        sumber: "QS. Ar-Rum: 21\n\n\n"
+        sumber: "QS. Ar-Rum: 21"
     },
 
     // 3. DATA MEMPELAI
     mempelai: {
         pria: {
             namaLengkap: "Okik Aris Setiawan, S.T.",
-            namaPanggilan: "Okik  ",
+            namaPanggilan: "Okik",
             namaAyah: "Bpk. Heri Susanto",
             namaIbu: "Ibu Nanik",
             foto: "assets/images/okik1.jpeg",
@@ -30,7 +30,7 @@ const dataUndangan = {
         },
         wanita: {
             namaLengkap: "Nurul Dwi Indah Istiana, S.M.",
-            namaPanggilan: "  Nurul",
+            namaPanggilan: "Nurul",
             namaAyah: "Bpk. Ekhwan Sunarto",
             namaIbu: "Ibu Hariyatun",
             foto: "assets/images/nurul10.jpeg",
@@ -38,7 +38,7 @@ const dataUndangan = {
         }
     },
 
-// 4. DATA ACARA
+    // 4. DATA ACARA
     acara: {
         akad: {
             namaAcara: "Akad Nikah",
