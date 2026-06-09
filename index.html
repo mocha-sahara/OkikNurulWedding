@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome untuk ikon premium -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="css/style.css">
@@ -155,12 +156,82 @@
                 <p id="teks-pengantar-hadiah" class="text-bantu">...</p>
                 
                 <div id="wadah-rekening" class="rekening-grid">
-                    </div>
+                </div>
 
                 <div id="wadah-kado" class="kado-box" style="display: none;">
                     <h3><i class="fas fa-gift gold-icon"></i> Kirim Kado</h3>
                     <p id="penerima-kado" class="bold-text">...</p>
                     <p id="alamat-kado">...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==============================================
+             BAGIAN UCAPAN / BUKU TAMU & KOMENTAR BALASAN
+             ============================================== -->
+        <section id="ucapan" class="section-pad">
+            <div class="container text-center box-mewah">
+                <h2 class="section-title font-latin gold-text">Wishes & RSVP</h2>
+                <p class="text-bantu" style="margin-bottom: 30px;">Tinggalkan pesan ucapan, doa restu, serta konfirmasi kehadiran Anda</p>
+                
+                <form id="form-ucapan" class="ucapan-form" style="max-width: 600px; margin: 0 auto 50px auto; text-align: left;">
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="input-nama" class="gold-light" style="display: block; margin-bottom: 8px; font-weight: bold; font-size: 0.95rem;">Nama Anda</label>
+                        <input type="text" id="input-nama" placeholder="Tulis nama lengkap/panggilan..." required 
+                               style="width: 100%; padding: 12px 15px; border-radius: 8px; background: rgba(10, 25, 49, 0.8); border: 1px solid var(--gold-luxury); color: white; font-family: var(--font-utama); font-size: 0.95rem; outline: none; box-sizing: border-box;">
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label class="gold-light" style="display: block; margin-bottom: 8px; font-weight: bold; font-size: 0.95rem;">Konfirmasi Kehadiran</label>
+                        <div class="rsvp-btn-group" style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button type="button" class="btn-rsvp active" data-rsvp="hadir" 
+                                    style="flex: 1; min-width: 120px; padding: 12px; border-radius: 8px; background: rgba(212, 175, 55, 0.15); border: 1px solid var(--gold-luxury); color: var(--gold-luxury); font-weight: bold; font-family: var(--font-utama); font-size: 0.9rem; transition: all 0.3s ease;">
+                                <i class="fas fa-check-circle" style="margin-right: 5px;"></i> Hadir
+                            </button>
+                            <button type="button" class="btn-rsvp" data-rsvp="tidak_hadir" 
+                                    style="flex: 1; min-width: 120px; padding: 12px; border-radius: 8px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); color: #ccc; font-weight: bold; font-family: var(--font-utama); font-size: 0.9rem; transition: all 0.3s ease;">
+                                <i class="fas fa-times-circle" style="margin-right: 5px;"></i> Tidak Hadir
+                            </button>
+                            <button type="button" class="btn-rsvp" data-rsvp="ragu_ragu" 
+                                    style="flex: 1; min-width: 120px; padding: 12px; border-radius: 8px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); color: #ccc; font-weight: bold; font-family: var(--font-utama); font-size: 0.9rem; transition: all 0.3s ease;">
+                                <i class="fas fa-question-circle" style="margin-right: 5px;"></i> Ragu-ragu
+                            </button>
+                        </div>
+                        <input type="hidden" id="input-rsvp" value="hadir">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="input-pesan" class="gold-light" style="display: block; margin-bottom: 8px; font-weight: bold; font-size: 0.95rem;">Ucapan & Doa</label>
+                        <textarea id="input-pesan" placeholder="Berikan doa terbaik Anda untuk kedua mempelai..." rows="4" required 
+                                  style="width: 100%; padding: 12px 15px; border-radius: 8px; background: rgba(10, 25, 49, 0.8); border: 1px solid var(--gold-luxury); color: white; font-family: var(--font-utama); font-size: 0.95rem; outline: none; resize: vertical; box-sizing: border-box;"></textarea>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn-primary" style="margin-top: 5px; width: 100%; max-width: 250px;">
+                            <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Kirim Ucapan
+                        </button>
+                    </div>
+                </form>
+
+                <hr style="border: 0; border-top: 1px solid rgba(212, 175, 55, 0.3); margin-bottom: 40px; display: block; width: 100%;">
+
+                <div id="filter-wrapper" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 15px; text-align: left;">
+                    <div class="stat-info" style="font-size: 0.95rem; color: var(--ice-blue);">
+                        Total Ucapan: <span id="total-wishes-count" class="gold-text" style="font-weight: bold;">0</span>
+                    </div>
+                    <div class="filter-controls" style="display: flex; gap: 10px; font-size: 0.85rem;">
+                        <select id="select-filter-rsvp" style="background: rgba(10, 25, 49, 0.9); border: 1px solid rgba(212, 175, 55, 0.5); color: white; padding: 6px 12px; border-radius: 6px; outline: none; font-family: var(--font-utama);">
+                            <option value="all">Semua RSVP</option>
+                            <option value="hadir">Hadir</option>
+                            <option value="tidak_hadir">Tidak Hadir</option>
+                            <option value="ragu_ragu">Ragu-ragu</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Container daftar ucapan diskroll -->
+                <div id="container-daftar-ucapan" class="scrollable-ucapan-list" style="max-height: 600px; overflow-y: auto; text-align: left; padding-right: 8px;">
+                    <!-- Diisi lewat javascript dialami app.js -->
                 </div>
             </div>
         </section>
