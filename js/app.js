@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---------------------------------------------------------
     
     // Initial wishes if none exist in localStorage
-    const INITIAL_WISHES = [
+   /* const INITIAL_WISHES = [
         {
             id: 'wish-1',
             name: 'Keluarga Bpk. Sunarto (Sidoarjo)',
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timestamp: Date.now() - 3600000 * 24, // 1 day ago
             replies: []
         }
-    ];
+    ]; */
 
     let wishes = [];
 
