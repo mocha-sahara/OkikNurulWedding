@@ -100,11 +100,11 @@ const dataUndangan = {
     },
 
     // 8. RSVP & UCAPAN (Integrasi WhatsApp)
-    rsvp: {
-        nomorWhatsApp: "6281234567890", // Gunakan format 62 tanpa + atau 0
+   /* rsvp: {
+        nomorWhatsApp: "6285856122960", // Gunakan format 62 tanpa + atau 0
         pesanDefaultHadir: "Halo, saya ingin mengonfirmasi bahwa saya *akan hadir* pada acara pernikahan Pria & Imroatus.",
         pesanDefaultTidakHadir: "Halo, saya memohon maaf karena *tidak dapat hadir* pada acara pernikahan Pria & Imroatus. Semoga lancar acaranya!"
-    },
+    },*/
 
     // 9. PENUTUP
     penutup: {
