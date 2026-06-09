@@ -270,7 +270,7 @@ button, .btn-primary, .btn-outline {
 
 /* ==========================================================
    SECTION VIDEO INTRO
-   ========================================================== */
+   ========================================================= */
 .video-container {
     position: relative;
     width: 100vw;
@@ -375,7 +375,7 @@ button, .btn-primary, .btn-outline {
     width: 200px;
     height: 200px;
     margin: 0 auto 20px auto;
-    background-image: url('../assets/images/1frame-foto-gold.png');
+    background-image: url('../assets/images/frame-foto-gold.png');
     background-size: cover;
     background-position: center;
     padding: 20px;
@@ -543,6 +543,298 @@ button, .btn-primary, .btn-outline {
 }
 
 /* ==========================================================
+   UCAPAN, RSVP, & KOMENTAR BALASAN (STYLING TAMBAHAN)
+   ========================================================== */
+
+/* Styling Form Input & Textarea */
+.form-input:focus, .form-textarea:focus {
+    border-color: var(--gold-light) !important;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Sizing button group RSVP */
+.btn-rsvp {
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    color: #ccc;
+    font-family: var(--font-utama);
+}
+
+.btn-rsvp.active[data-rsvp="hadir"] {
+    background-color: rgba(46, 204, 113, 0.15) !important;
+    border-color: #2ecc71 !important;
+    color: #2ecc71 !important;
+}
+
+.btn-rsvp.active[data-rsvp="tidak_hadir"] {
+    background-color: rgba(231, 76, 60, 0.15) !important;
+    border-color: #e74c3c !important;
+    color: #e74c3c !important;
+}
+
+.btn-rsvp.active[data-rsvp="ragu_ragu"] {
+    background-color: rgba(241, 196, 15, 0.15) !important;
+    border-color: #f1c40f !important;
+    color: #f1c40f !important;
+}
+
+/* List Ucapan */
+.scrollable-ucapan-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollable-ucapan-list::-webkit-scrollbar-thumb {
+    background-color: rgba(212, 175, 55, 0.4);
+    border-radius: 10px;
+}
+
+.scrollable-ucapan-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Card item Ucapan */
+.ucapan-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.ucapan-card:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.ucapan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.ucapan-nama {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--gold-light);
+}
+
+/* Badges */
+.badge-rsvp {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge-rsvp.hadir {
+    background-color: rgba(46, 204, 113, 0.2);
+    border: 1px solid #2ecc71;
+    color: #2ecc71;
+}
+
+.badge-rsvp.tidak-hadir {
+    background-color: rgba(231, 76, 60, 0.2);
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+}
+
+.badge-rsvp.ragu-ragu {
+    background-color: rgba(241, 196, 15, 0.2);
+    border: 1px solid #f1c40f;
+    color: #f1c40f;
+}
+
+.ucapan-waktu {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.ucapan-teks {
+    font-size: 0.9rem;
+    color: #eee;
+    white-space: pre-line;
+    line-height: 1.5;
+    border-left: 2px solid rgba(212, 175, 55, 0.3);
+    padding-left: 12px;
+    margin-bottom: 15px;
+}
+
+.ucapan-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-balas {
+    background: transparent;
+    border: none;
+    color: var(--gold-luxury);
+    font-size: 0.85rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+}
+
+.btn-balas:hover {
+    color: var(--gold-light);
+}
+
+.btn-hapus-ucapan {
+    background: transparent;
+    border: none;
+    color: #e74c3c;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    opacity: 0.5;
+}
+
+.btn-hapus-ucapan:hover {
+    opacity: 1;
+}
+
+/* Replies / Comments block inside wish card */
+.replies-box {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(212, 175, 55, 0.2);
+}
+
+.replies-list {
+    margin-bottom: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.reply-card {
+    background: rgba(10, 25, 49, 0.5);
+    border-left: 2px solid var(--gold-luxury);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.85rem;
+    position: relative;
+}
+
+.reply-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.reply-nama {
+    font-weight: bold;
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge-mempelai {
+    background: rgba(212, 175, 55, 0.15);
+    border: 1px solid var(--gold-luxury);
+    color: var(--gold-luxury);
+    font-size: 0.65rem;
+    padding: 1px 4px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.reply-waktu {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.reply-teks {
+    color: #ddd;
+    line-height: 1.4;
+    white-space: pre-line;
+}
+
+/* Reply Input fields */
+.form-internal-reply {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(10, 25, 49, 0.6);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.reply-input-name {
+    width: 100%;
+    padding: 8px 12px;
+    background: #061022;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 5px;
+    color: white;
+    font-size: 0.8rem;
+    outline: none;
+    font-family: var(--font-utama);
+}
+
+.reply-message-row {
+    display: flex;
+    gap: 8px;
+}
+
+.reply-input-message {
+    flex: 1;
+    padding: 8px 12px;
+    background: #061022;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 5px;
+    color: white;
+    font-size: 0.8rem;
+    outline: none;
+    font-family: var(--font-utama);
+}
+
+.btn-send-reply {
+    background: var(--gold-luxury);
+    color: var(--navy-blue);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-send-reply:hover {
+    background: var(--gold-light);
+}
+
+/* Host checkbox inside reply form */
+.host-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--ice-blue);
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ==========================================================
    RESPONSIVE DESIGN (Tampilan HP)
    ========================================================== */
 @media (max-width: 768px) {
@@ -580,3 +872,4 @@ button, .btn-primary, .btn-outline {
         padding: 40px 15px;
     }
 }
+
